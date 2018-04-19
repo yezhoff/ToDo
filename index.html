@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="tpl/css/main.css" >
+
+</head>
+<body>
+
+<div id="todo">
+
+    <div class="statusbar">
+        <div class="inset">Задач <b id="all">0</b> Активных <b id="active">0</b> Выполненых <b id="completed">0</b></div>
+    </div>
+
+    <div class="items inset"></div>
+
+    <div class="toolbar inset">
+        <textarea placeholder="Описание задачи (можно в несколько строк)" id="text"></textarea>
+        <a class="button add" id="add">Добавить</a>
+        <a class="button save" id="save">Сохранить</a>
+        <a class="button cancel" id="cancel">Отменить</a>
+        <a class="button delete" id="delete">Удалить</a>
+    </div>
+
+</div>
+
+<script src="lib/app.js"></script>
+</body>
+</html>

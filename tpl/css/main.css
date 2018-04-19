@@ -1,0 +1,188 @@
+:root {
+    --text-color: #333;
+    --accent-color: #339ad5;
+    --action-color: #1ca92a;
+    --alert-color: #dd6f23;
+    --passive-color: #999;
+    --item-bg-color: #fff;
+}
+
+/*
+----------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 16px sans-serif;
+}
+
+body {
+    background: #eee;
+    color: var(--text-color);
+}
+
+.inset {
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 600px;
+}
+
+/*
+----------------------------------------------------------------------- */
+
+#todo .statusbar {
+    margin-bottom: 20px;
+    background: var(--accent-color);
+    color: #fff;
+}
+
+#todo .statusbar .inset {
+    height: 40px;
+    line-height: 40px;
+}
+
+#todo .statusbar b {
+    display: inline-block;
+    line-height: 20px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background: #fff;
+    color: var(--accent-color);
+    border-radius: 20px;
+}
+
+/*
+----------------------------------------------------------------------- */
+
+#todo .items {
+    margin-bottom: 20px;
+}
+
+#todo .item {
+    margin-bottom: 5px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: box-shadow .3s;
+}
+
+#todo .item:hover {
+    background: #fff url("../img/edit.svg") right 10px top 10px no-repeat;
+    background-size: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+#todo.edit .item:not(.active) {
+    display: none;
+}
+
+#todo .item .text {
+    margin: 0 30px;
+    line-height: 20px;
+    min-height: 20px;
+    cursor: pointer;
+    white-space: pre-line;
+}
+
+#todo .item.completed .text {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+#todo .item .check {
+    position: relative;
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+#todo .item .check:after {
+    display: none;
+    position: absolute;
+    left: 9px;
+    top: -4px;
+    width: 7px;
+    height: 18px;
+    content: '';
+    border-right: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    transform: rotate(45deg);
+}
+
+#todo .item.completed .check:after {
+    display: block;
+}
+
+/*
+----------------------------------------------------------------------- */
+
+#todo .notice {
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #999;
+}
+
+#todo textarea {
+    display: block;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+#todo .button {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 4px;
+    background: var(--action-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+#todo.edit .button.add {
+    display: none;
+}
+
+#todo .button.save {
+    display: none;
+}
+
+#todo .button.cancel {
+    display: none;
+    background: var(--passive-color);
+}
+
+#todo .button.delete {
+    display: none;
+    background: var(--alert-color);
+}
+
+#todo.edit .button.save,
+#todo.edit .button.delete,
+#todo.edit .button.cancel {
+    display: block;
+}
+
+#todo .button:hover {
+    opacity: .8;
+}
